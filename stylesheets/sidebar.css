@@ -1,28 +1,43 @@
 .sidebar {
   position: fixed;
-  top: 70px;
+  top: 50px;
   left: 20px;
+  z-index: 1;
   width: 300px;
-  padding: 30px;
-  background: rgba (0, 0, 255, .1);
+  opacity: .1;
 }
 
-.sidebar ul {
+.sidebar:hover {
+  opacity: 1;
+}
 
+.sidebar > ul {
+  position: absolute;
+  padding: 15px 30px;
 }
 
 .sidebar li {
-
+  margin: 12px 0;
+  font-size: 14px;
+  line-height: 15px;
+  color: rgba(0,0,0,.8);
 }
 
-.sidebar > ul > li {
-
+.sidebar > ul > li:first-child {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.sidebar li > ul {
-
+.sidebar > ul > li > ul {
+  padding-left: 10px;
 }
 
-.sidebar ul > li > ul > li {
+.sidebar > ul > li > ul li {
+  color: rgba(0,0,0,.4);
+}
 
+@media only all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .sidebar {
+    display: none;
+  }
 }

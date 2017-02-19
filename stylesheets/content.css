@@ -1,4 +1,4 @@
-article {
+article > * {
   width: 700px;
   margin: 0 auto;
 }
@@ -61,6 +61,7 @@ article blockquote {
   color: rgba(0, 0, 0, .8);
 }
 
+
 blockquote {
   position: relative;
   font-style: italic;
@@ -85,7 +86,7 @@ article blockquote + p {
 }
 
 article ul {
-  margin: 29px 0;
+  margin: 29px auto;
 }
 
 article li {
@@ -98,11 +99,60 @@ article a {
 }
 
 article img {
-  display: block;
-  width: 1020px;
-  margin: 80px auto;
+ display: block;
+ width: 1020px;
+ margin: 80px auto;
 }
 
 article img + h2 {
-  margin-top: -1px;
+ margin-top: -1px;
+}
+
+article img + p,
+article img + blockquote,
+article img + ul {
+ margin-top: -3px;
+}
+
+article  {
+  margin-top: 82px;
+}
+
+article h3 + img {
+ margin-top: 81px;
+}
+
+.share {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.share > div {
+  position: absolute;
+  top: -44px;
+  right: 20px;
+}
+
+
+@media all and (max-width: 1020px) {
+  article img {
+    width: 100%;
+  }
+}
+
+@media only all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  article > * {
+    width: calc(100% - 40px);
+  }
+}
+
+@media only all and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+  body {
+    min-width: 320px;
+  }
+
+  article > * {
+    width: calc(100% - 40px);
+  }
 }
